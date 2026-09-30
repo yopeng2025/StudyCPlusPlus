@@ -221,6 +221,7 @@ A typical Ford–Johnson-style strategy:
 - **ex01**
   - `make`
   - `./RPN "8 9 * 9 - 9 - 9 - 9 - 4 - 1 +"`
+  - `./PRN "8 7 * 6 - 5 / 1 +"`
 
 - **ex02**
   - `make`
