@@ -1,0 +1,18 @@
+make
+./Account > my.log
+
+用sed(stream editor)把时间戳替换掉:
+sed 's/\[[0-9_]*\]/[TIMESTAMP]/g' my.log > my_clean.log
+sed 's/\[[0-9_]*\]/[TIMESTAMP]/g' 19920104_091532.log > ref_clean.log
+
+* 's/A/B/g' 替换语法 将A替换成B
+A中: 
+	\[  \] 转义
+	[0-9_]* 任意长度的数字0-9 下划线_ *表示前面的字符或字符类可以重复0次或多次
+B中：
+	[TIMESTAMP] 将[19920104_091532] 替换→ [TIMESTAMP]
+	
+	
+找出不同的地方:
+diff my_clean.log ref_clean.log
+
